@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-firebase-1dcea": {
+      "hosting": {
+        "contact": [
+          "angular-firebase-1dcea"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-firebase-1dcea"
+  }
+}

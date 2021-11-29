@@ -1,0 +1,25 @@
+nav {
+    background-color: #3e3f3a;
+    color: #fff;
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        
+        li {
+            height: 4rem;
+            &:hover {
+                background-color: #007bff;
+                transition: all 1s;
+            }
+
+            a {
+                padding-top: auto;
+                padding-bottom: auto;
+                text-decoration: none;
+                color: #fff;
+                padding: 10px;
+            }
+        }
+    }
+}

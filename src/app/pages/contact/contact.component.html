@@ -1,0 +1,54 @@
+<div class="card mt-4" style="width: 25rem;">
+    <div class="card-body">
+        <h5 class="card-title">Formulario</h5>
+        <form novalidate (ngSubmit)="guardar();" [formGroup]="contactForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control inputUpd" placeholder="Nombre" formControlName="nombre" [class]="validarCampo('nombre')">
+                    <div class="invalid-feedback">
+                        <span *ngIf="contactForm.get('nombre').errors?.required">
+                            Ingresa tu nombre
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control inputUpd" placeholder="Apellido" formControlName="apellido" [class]="validarCampo('apellido')">
+                    <div class="invalid-feedback">
+                        <span *ngIf="contactForm.get('apellido').errors?.required">
+                            Ingresa tu apellido
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" class="form-control inputUpd" placeholder="Email" formControlName="email"  [class]="validarCampo('email')">
+                <div class="invalid-feedback">
+                    <span *ngIf="contactForm.get('email').errors?.required">
+                        Ingresa tu email
+                    </span>
+                    <span *ngIf="contactForm.get('email').errors?.pattern">
+                        Ingresa un email valido
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Descripcion:</label>
+                <textarea rows="3" class="form-control inputUpd" formControlName="descripcion" [class]="validarCampo('descripcion')"></textarea>
+                <div class="invalid-feedback">
+                    <span *ngIf="contactForm.get('descripcion').errors?.required">
+                        Ingresa tu descripcion
+                    </span>
+                    <span *ngIf="contactForm.get('descripcion').errors?.minlength">
+                        Debe tener mas de {{ contactForm.get('descripcion').errors?.minlength?.requiredLength }} caracteres
+                    </span>
+                    <span *ngIf="contactForm.get('descripcion').errors?.maxlength">
+                        Debe tener menos de {{ contactForm.get('descripcion').errors?.maxlength?.requiredLength }} caracteres
+                    </span>
+                </div>
+            </div>
+        
+            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+    </div>
+</div>
